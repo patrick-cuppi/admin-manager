@@ -1,0 +1,22 @@
+{
+  "name": "admin-manager",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@adminjs/express": "^6.1.0",
+    "adminjs": "^7.8.13",
+    "express": "^4.21.1",
+    "express-formidable": "^1.2.0",
+    "express-session": "^1.18.1",
+    "tslib": "^2.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7",
+    "prettier": "^3.3.3",
+    "sucrase": "^3.35.0"
+  },
+  "scripts": {
+    "dev": "nodemon ./src/server.js"
+  }
+}
