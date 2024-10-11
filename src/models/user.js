@@ -28,11 +28,11 @@ class User extends Model {
                 plural: 'users'
             }
         });
-    }
+    };
 
     static associate(models) {
-
-    }
-}
+        this.hasMany(models.Project, );
+    };
+};
 
 export default User;
