@@ -1,5 +1,7 @@
 import AdminJS from "adminjs";
 import Task from "../models/task";
+import uploadFeature from "@adminjs/upload";
+import credentials from "../config/credentials";
 
 export default {
     resource: Task,
@@ -67,14 +69,56 @@ export default {
                 position: 11,
                 isVisible: { list: false, filter: true, show: true, edit: false }
             },
+            attachment: {
+                position: 12
+            },
             user_id: {
                 isVisible: false
             },
             project_id: {
                 isVisible: false
+            },
+            path: {
+                isVisible: false
+            },
+            folder: {
+                isVisible: false
+            },
+            type: {
+                isVisible: false
+            },
+            filename: {
+                isVisible: false
+            },
+            size: {
+                isVisible: false
             }
         }
     },
-};
 
-//1:36:02
+    features: [
+        uploadFeature({
+            provider: {
+                aws: credentials,
+            },
+
+            properties: {
+                key: 'path',
+                bucket: 'folder',
+                mimeType: 'type',
+                size: 'size',
+                filename: 'filename',
+                file: 'attachment'
+            },
+
+            validation: {
+                mimeTypes: [
+                    'image/png',
+                    'application/pdf',
+                    'application/zip'
+                ],
+                maxSize: 5 * 1024 * 1024,
+            },
+        }),
+    ],
+};
