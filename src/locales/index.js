@@ -81,7 +81,7 @@ const translations = {
       'Uma nova senha aleatória será gerada e atribuída para este usuário, para prosseguir clique no botão "Redefinir senha".',
     newPasswordMessage: 'Nova senha "{{newPassword}}" atribuída ao usuário.',
     newPasswordMessageError: 'Erro ao redefinir a senha automaticamente.',
-    dashboardTitle: 'Bem-vindo(a) ao Task Manager',
+    dashboardTitle: 'Bem-vindo(a) ao Admin Manager',
     dashboardSubTitle: 'Controle todos seus projetos de uma forma simples',
     taskTypeCardTitle: 'Tipos de Tarefas',
     taskEffortCardTitle: 'Esforço por prazo',
