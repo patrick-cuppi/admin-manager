@@ -16,6 +16,9 @@ const app = express();
 const adminJS = new AdminJS({
     databases: [],
     rootPath: '/admin',
+    dashboard: {
+        componen: AdminJS.bundle('./components/Dashboard/index'),
+    },
     resources: [UserResource, ProjectResource, TaskResource],
     ...locales,
 });

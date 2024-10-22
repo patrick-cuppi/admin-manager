@@ -5542,6 +5542,11 @@ react-feather@^2.0.10:
   dependencies:
     prop-types "^15.7.2"
 
+react-google-charts@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/react-google-charts/-/react-google-charts-5.1.0.tgz#714b509369cb97e083a9fee873634f09c5694766"
+  integrity sha512-9vOz4NU9lBjj9VF0DQQowKyPKQCb53zN7ts6kNCQqngQCrS9DMT9IuSBnCx1ULAU152+x5dDQ3DugSi2OdqgpA==
+
 react-i18next@^12.2.0:
   version "12.3.1"
   resolved "https://registry.yarnpkg.com/react-i18next/-/react-i18next-12.3.1.tgz#30134a41a2a71c61dc69c6383504929aed1c99e7"
