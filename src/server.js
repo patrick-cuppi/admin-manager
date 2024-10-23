@@ -8,6 +8,7 @@ import UserResource from "./resources/UserResource";
 import locales from "./locales";
 import ProjectResource from "./resources/ProjectResource";
 import TaskResource from "./resources/TaskResource";
+import theme from "./theme";
 
 AdminJS.registerAdapter(AdminJSSequelize);
 
@@ -20,6 +21,12 @@ const adminJS = new AdminJS({
         componen: AdminJS.bundle('./components/Dashboard/index'),
     },
     resources: [UserResource, ProjectResource, TaskResource],
+    branding: {
+        companyName: 'Admin Manager Ltda',
+        logo: false,
+        softwareBrothers: false,
+        theme,
+    },
     ...locales,
 });
 
