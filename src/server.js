@@ -8,6 +8,7 @@ import UserResource from "./resources/UserResource";
 import locales from "./locales";
 import ProjectResource from "./resources/ProjectResource";
 import TaskResource from "./resources/TaskResource";
+import User from "./models/user";
 import theme from "./theme";
 
 AdminJS.registerAdapter(AdminJSSequelize);
@@ -30,7 +31,22 @@ const adminJS = new AdminJS({
     ...locales,
 });
 
-const router = AdminJSExpress.buildRouter(adminJS);
+// const router = AdminJSExpress.buildRouter(adminJS);
+
+const router = AdminJSExpress.buildAuthenticatedRouter(adminJS, {
+    authenticate: async (email, password) => {
+        const user = await User.findOne({
+            where: { email },
+        });
+
+        if(user && (await user.checkPassword(password))) {
+            return user;
+        }
+
+        return false;
+    },
+    cookiePassword: process.env.SECRET,
+});
 
 app.use(adminJS.options.rootPath, router);
 app.listen(5000, () => {
